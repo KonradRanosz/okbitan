@@ -3,12 +3,29 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>OKBITAN - Modern Webpage</title>
-        <meta name="description" content="Welcome to OKBITAN" />
+        <title>OKBITAN - the mountain</title>
+        <meta name="description" content="Welcome to OKBITAN, the moutain" />
         <link
             href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
             rel="stylesheet"
         />
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="OKBITAN - the mountain" />
+        <meta
+            property="og:description"
+            content="Welcome to OKBITAN, the moutain"
+        />
+        <meta property="og:image" content="https://okbitan.pl/logo.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://okbitan.pl/" />
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="OKBITAN - the mountain" />
+        <meta
+            name="twitter:description"
+            content="Welcome to OKBITAN, the moutain"
+        />
+        <meta name="twitter:image" content="https://okbitan.pl/logo.jpg" />
 
         <style>
             :root {
@@ -131,7 +148,7 @@
                 voluptas illum sint architecto ea aut obcaecati officia, laborum
                 quod vitae.
             </div>
-            <p class="at">okbitan@gmail.com</p>
+            <p class="at">okbitan@gmail.pl</p>
             <div class="socials">
                 <a
                     href="https://instagram.com/"
@@ -179,5 +196,97 @@
                 </a>
             </div>
         </div>
+        <!-- PhotoSwipe CSS -->
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/photoswipe@5/dist/photoswipe.css"
+        />
+
+        <!-- Gallery HTML -->
+        <div class="pswp-gallery" id="gallery">
+            <a
+                href="https://placehold.co/1200x800"
+                data-pswp-width="1200"
+                data-pswp-height="800"
+                target="_blank"
+            >
+                <img src="https://placehold.co/300x200" alt="Placeholder 1" />
+            </a>
+            <a
+                href="https://placehold.co/1200x900"
+                data-pswp-width="1200"
+                data-pswp-height="900"
+                target="_blank"
+            >
+                <img src="https://placehold.co/300x225" alt="Placeholder 2" />
+            </a>
+            <a
+                href="https://placehold.co/1000x1000"
+                data-pswp-width="1000"
+                data-pswp-height="1000"
+                target="_blank"
+            >
+                <img src="https://placehold.co/200x200" alt="Placeholder 3" />
+            </a>
+            <a
+                href="https://placehold.co/1400x700"
+                data-pswp-width="1400"
+                data-pswp-height="700"
+                target="_blank"
+            >
+                <img src="https://placehold.co/350x175" alt="Placeholder 4" />
+            </a>
+            <a
+                href="https://placehold.co/900x1200"
+                data-pswp-width="900"
+                data-pswp-height="1200"
+                target="_blank"
+            >
+                <img src="https://placehold.co/150x200" alt="Placeholder 5" />
+            </a>
+        </div>
+
+        <!-- PhotoSwipe JS -->
+        <script type="module">
+            import PhotoSwipeLightbox from "https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.js";
+
+            const lightbox = new PhotoSwipeLightbox({
+                gallery: "#gallery",
+                children: "a",
+                pswpModule: () =>
+                    import(
+                        "https://unpkg.com/photoswipe@5/dist/photoswipe.esm.js"
+                    ),
+            });
+            lightbox.init();
+        </script>
+
+        <style>
+            .pswp-gallery {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 16px;
+                margin-top: 32px;
+            }
+            .pswp-gallery a {
+                flex: 1 1 calc(33.333% - 16px);
+                box-sizing: border-box;
+            }
+            .pswp-gallery img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+            @media (max-width: 600px) {
+                .pswp-gallery a {
+                    flex: 1 1 calc(50% - 16px);
+                }
+            }
+            @media (max-width: 400px) {
+                .pswp-gallery a {
+                    flex: 1 1 100%;
+                }
+            }
+        </style>
     </body>
 </html>
